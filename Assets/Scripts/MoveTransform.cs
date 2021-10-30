@@ -1,25 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 internal class MoveTransform : IMove
 {
-    private readonly Transform _transform;
-    private Vector3 _move;
+    private Rigidbody2D _playerRigidBody;
+    private Transform _transform;
+    private protected float _speed;
 
-    public float Speed { get; protected set; }
-
-    public MoveTransform(Transform transform, float speed)
-    {
+    public MoveTransform(Transform transform, Rigidbody2D playerRigidBody, float speed)
+    {        
+        _speed = speed;
         _transform = transform;
-        Speed = speed;
+        _playerRigidBody = playerRigidBody;
     }
 
     public void Move(float horizontal, float vertical, float deltaTime)
     {
-        var speed = deltaTime * Speed;
-        _move.Set(horizontal * speed, vertical * speed, 0.0f);
-        _transform.localPosition += _move;
+        _playerRigidBody.AddForce(_transform.up * _speed * deltaTime * vertical, ForceMode2D.Impulse);
+        _playerRigidBody.AddForce(_transform.right * _speed * deltaTime * horizontal, ForceMode2D.Impulse);
     }
 }
 

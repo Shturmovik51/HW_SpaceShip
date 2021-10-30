@@ -56,13 +56,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Ship.cs" />
+    <Compile Include="Assets\Scripts\MoveTransform.cs" />
     <Compile Include="Assets\Scripts\IRotation.cs" />
     <Compile Include="Assets\Scripts\IMove.cs" />
     <Compile Include="Assets\Scripts\RotationShip.cs" />
     <Compile Include="Assets\Scripts\AccelerationMove.cs" />
-    <Compile Include="Assets\Scripts\MoveTransform.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\GameStarter.cs" />
+    <Compile Include="Assets\Scripts\PlayerModel.cs" />
+    <Compile Include="Assets\Scripts\PlayerView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

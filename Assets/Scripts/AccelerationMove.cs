@@ -4,18 +4,19 @@ internal sealed class AccelerationMove : MoveTransform
 {
     private readonly float _acceleration;
 
-    public AccelerationMove(Transform transform, float speed, float acceleration) : base(transform, speed)
+    public AccelerationMove(Transform transform, Rigidbody2D playerRigidBody, float speed, float acceleration) : 
+                                base(transform, playerRigidBody, speed)
     {
         _acceleration = acceleration;
     }
 
     public void AddAcceleration()
     {
-        Speed += _acceleration;
+        _speed += _acceleration;
     }
 
     public void RemoveAcceleration()
     {
-        Speed -= _acceleration;
+        _speed -= _acceleration;
     }
 }
