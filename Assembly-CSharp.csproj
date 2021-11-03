@@ -58,13 +58,31 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\MoveTransform.cs" />
     <Compile Include="Assets\Scripts\IRotation.cs" />
+    <Compile Include="Assets\Scripts\GameStarter.cs" />
     <Compile Include="Assets\Scripts\IMove.cs" />
     <Compile Include="Assets\Scripts\RotationShip.cs" />
     <Compile Include="Assets\Scripts\AccelerationMove.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\GameStarter.cs" />
     <Compile Include="Assets\Scripts\PlayerModel.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerView.cs" />
+    <Compile Include="Assets\Scripts\EntityHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Asteroid.cs" />
+    <Compile Include="Assets\Scripts\EnemyFactory.cs" />
+    <Compile Include="Assets\Scripts\Input\InputController.cs" />
+    <Compile Include="Assets\Scripts\Input\InputKeysData.cs" />
+    <Compile Include="Assets\Scripts\Input\InputKeys.cs" />
+    <Compile Include="Assets\Scripts\ControllersManager\ControllersManager.cs" />
+    <Compile Include="Assets\Scripts\ControllersManager\IController.cs" />
+    <Compile Include="Assets\Scripts\ControllersManager\IFixedUpdatable.cs" />
+    <Compile Include="Assets\Scripts\ControllersManager\IInitializable.cs" />
+    <Compile Include="Assets\Scripts\ControllersManager\ILateUpdatable.cs" />
+    <Compile Include="Assets\Scripts\ControllersManager\IUpdatable.cs" />
+    <Compile Include="Assets\Scripts\ControllersManager\ICleanable.cs" />
+    <Compile Include="Assets\Scripts\GameInitializator.cs" />
+    <Compile Include="Assets\Scripts\Input\InputAxis.cs" />
+    <Compile Include="Assets\Scripts\Input\AxisManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerModelData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

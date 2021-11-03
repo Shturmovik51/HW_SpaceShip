@@ -1,4 +1,7 @@
-public interface IMove
+namespace SpaceShipGame
 {
-    void Move(float horizontal, float vertical, float deltaTime);
+    public interface IMove
+    {
+        void Move(float horizontal, float vertical, float deltaTime);
+    }
 }

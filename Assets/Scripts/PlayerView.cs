@@ -1,39 +1,43 @@
 using UnityEngine;
 
-public class PlayerView : MonoBehaviour, IMove, IRotation
+namespace SpaceShipGame
 {
-    private  IMove _moveImplementation;
-    private  IRotation _rotationImplementation;
-
-    public void Init(float speed, float acceleration, Rigidbody2D playerRigidBody)
+    public class PlayerView : MonoBehaviour, IMove, IRotation
     {
-        _moveImplementation = new AccelerationMove(transform, playerRigidBody, speed, acceleration);
-        _rotationImplementation = new RotationShip(transform);
-    }
+        private IMove _moveImplementation;
+        private IRotation _rotationImplementation;
 
-    public void Move(float horizontal, float vertical, float deltaTime)
-    {
-        _moveImplementation.Move(horizontal, vertical, deltaTime);
-    }
-
-    public void Rotation(Vector3 direction)
-    {
-        _rotationImplementation.Rotation(direction);
-    }
-
-    public void AddAcceleration()
-    {
-        if (_moveImplementation is AccelerationMove accelerationMove)
+        public void Init(float speed, float acceleration)
         {
-            accelerationMove.AddAcceleration();
+            var playerRigidBody = GetComponent<Rigidbody2D>();
+            _moveImplementation = new AccelerationMove(transform, playerRigidBody, speed, acceleration);
+            _rotationImplementation = new RotationShip(transform);
         }
-    }
 
-    public void RemoveAcceleration()
-    {
-        if (_moveImplementation is AccelerationMove accelerationMove)
+        public void Move(float horizontal, float vertical, float deltaTime)
         {
-            accelerationMove.RemoveAcceleration();
+            _moveImplementation.Move(horizontal, vertical, deltaTime);
+        }
+
+        public void Rotation(Vector3 direction)
+        {
+            _rotationImplementation.Rotation(direction);
+        }
+
+        public void AddAcceleration()
+        {
+            if (_moveImplementation is AccelerationMove accelerationMove)
+            {
+                accelerationMove.AddAcceleration();
+            }
+        }
+
+        public void RemoveAcceleration()
+        {
+            if (_moveImplementation is AccelerationMove accelerationMove)
+            {
+                accelerationMove.RemoveAcceleration();
+            }
         }
     }
 }

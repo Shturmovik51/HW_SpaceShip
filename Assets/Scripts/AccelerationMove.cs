@@ -1,22 +1,25 @@
 using UnityEngine;
 
-internal sealed class AccelerationMove : MoveTransform
+namespace SpaceShipGame
 {
-    private readonly float _acceleration;
-
-    public AccelerationMove(Transform transform, Rigidbody2D playerRigidBody, float speed, float acceleration) : 
-                                base(transform, playerRigidBody, speed)
+    internal sealed class AccelerationMove : MoveTransform
     {
-        _acceleration = acceleration;
-    }
+        private readonly float _acceleration;
 
-    public void AddAcceleration()
-    {
-        _speed += _acceleration;
-    }
+        public AccelerationMove(Transform transform, Rigidbody2D playerRigidBody, float speed, float acceleration) :
+                                    base(transform, playerRigidBody, speed)
+        {
+            _acceleration = acceleration;
+        }
 
-    public void RemoveAcceleration()
-    {
-        _speed -= _acceleration;
+        public void AddAcceleration()
+        {
+            _speed += _acceleration;
+        }
+
+        public void RemoveAcceleration()
+        {
+            _speed -= _acceleration;
+        }
     }
 }

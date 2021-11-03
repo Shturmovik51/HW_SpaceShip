@@ -1,24 +1,22 @@
 using UnityEngine;
 
-public class PlayerModel
+namespace SpaceShipGame
 {
-    public float Speed { get; set; }
-    public float Acceleration { get; }
-    public float Hp { get; }
-    public Rigidbody2D Bullet { get; }
-    public Transform Barrel { get; }
-    public float Force { get; }
-    public Camera Camera { get; }
-
-    public PlayerModel(float speed, float acceleration, float hp, Rigidbody2D bullet, Transform barrel, float force,
-                        Camera camera)
+    public class PlayerModel
     {
-        Speed = speed;
-        Acceleration = acceleration;
-        Hp = hp;
-        Bullet = bullet;
-        Barrel = barrel;
-        Force = force;
-        Camera = camera;
+        public float Speed { get; set; }
+        public float Axeleration { get; }
+        public float Hp { get; }
+        public float Force { get; }
+        public Camera Camera { get; }
+
+        public PlayerModel(PlayerModelData playerData, Camera camera)
+        {
+            Speed = playerData.Speed;
+            Axeleration = playerData.Axeleration;
+            Hp = playerData.HP;
+            Force = playerData.Force;
+            Camera = camera;
+        }
     }
 }

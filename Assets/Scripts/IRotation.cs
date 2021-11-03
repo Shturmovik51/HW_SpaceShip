@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public interface IRotation
+namespace SpaceShipGame
 {
-    void Rotation(Vector3 direction);
+    public interface IRotation
+    {
+        void Rotation(Vector3 direction);
+    }
 }
