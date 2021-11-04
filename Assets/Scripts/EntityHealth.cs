@@ -3,7 +3,7 @@ namespace SpaceShipGame
     public sealed class EntityHealth
     {
         public float Max { get; }
-        public float Current { get; private set; }
+        public float Current { get; set; }
 
         public EntityHealth(float max, float current)
         {

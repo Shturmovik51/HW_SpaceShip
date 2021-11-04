@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public static class AxisManager
+namespace SpaceShipGame
 {
-    public const string Horizontal = "Horizontal";
-    public const string Vertical = "Vertical";
+    public static class AxisManager
+    {
+        public const string Horizontal = "Horizontal";
+        public const string Vertical = "Vertical";
+    }
 }

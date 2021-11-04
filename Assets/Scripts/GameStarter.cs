@@ -5,6 +5,14 @@ namespace SpaceShipGame
     public class GameStarter : MonoBehaviour
     {        
         [SerializeField] private PlayerView _playerView;
+        [SerializeField] private Roket _roketPref;
+        [SerializeField] private Transform _asteroidPref;
+        [SerializeField] private AsteroidModelData _bigAsteroidModel;
+        [SerializeField] private AsteroidModelData _normalAsteroidModel;
+        [SerializeField] private AsteroidModelData _smallaAsteroidModel;
+        [SerializeField] private Transform _leftBorder;
+        [SerializeField] private Transform _rightBorder;
+        [SerializeField] private int _roketDamage;
 
         private Camera _camera;
         private ControllersManager _controllersManager;
@@ -19,22 +27,18 @@ namespace SpaceShipGame
 
             _controllersManager = new ControllersManager();
 
-            new GameInitializator(_controllersManager, _inputKeysData, _playerModelData, _playerView, _camera);
+            new GameInitializator(_controllersManager, _inputKeysData, _playerModelData, _playerView, _camera, _asteroidPref,
+                     _bigAsteroidModel, _normalAsteroidModel, _smallaAsteroidModel, this, _leftBorder, _rightBorder, _roketPref,
+                        _roketDamage);
 
             _controllersManager.Initialization();           
         }
 
         private void Update()
         {
-            _controllersManager.LocalLateUpdate(Time.deltaTime);
+            _controllersManager.LocalUpdate(Time.deltaTime);
 
-            ////var direction = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
-
-            //if (Input.GetButtonDown("Fire1"))
-            //{
-            //    var temAmmunition = Instantiate(_bullet, _barrel.position, _barrel.rotation);
-            //    temAmmunition.AddForce(_barrel.up * _force);
-            //}
+            var direction = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
         }
         private void FixedUpdate()
         {

@@ -15,4 +15,4 @@ MonoBehaviour:
   _hP: 2
   _speed: 5
   _axeleration: 5
-  _force: 5
+  _force: 50
