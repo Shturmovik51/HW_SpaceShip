@@ -37,8 +37,6 @@ namespace SpaceShipGame
         private void Update()
         {
             _controllersManager.LocalUpdate(Time.deltaTime);
-
-            var direction = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
         }
         private void FixedUpdate()
         {

@@ -17,8 +17,11 @@ namespace SpaceShipGame
 
         public void Move(float horizontal, float vertical, float deltaTime)
         {
-            _playerRigidBody.AddForce(_transform.up * _speed * deltaTime * vertical, ForceMode2D.Impulse);
-            _playerRigidBody.AddForce(_transform.right * _speed * deltaTime * horizontal, ForceMode2D.Impulse);
+            _playerRigidBody.AddForce(Vector2.up * _speed * deltaTime * vertical, ForceMode2D.Impulse);
+            _playerRigidBody.AddForce(Vector2.right * _speed * deltaTime * horizontal, ForceMode2D.Impulse);
+
+            //_playerRigidBody.AddForce(_transform.up * _speed * deltaTime * vertical, ForceMode2D.Impulse);
+            //_playerRigidBody.AddForce(_transform.right * _speed * deltaTime * horizontal, ForceMode2D.Impulse);
         }
     }
 }

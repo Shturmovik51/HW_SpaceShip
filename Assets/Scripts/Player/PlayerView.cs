@@ -25,7 +25,7 @@ namespace SpaceShipGame
         }
 
         public void Rotation(Vector3 direction)
-        {
+        {           
             _rotationImplementation.Rotation(direction);
         }
 
@@ -47,9 +47,10 @@ namespace SpaceShipGame
 
         public void Shoot(Roket roket, float force)
         {
-            roket.gameObject.SetActive(true);
             roket.transform.position = _shootStartPosition.position;
-            roket.Rigidbody.AddForce(Vector3.up * force, ForceMode2D.Impulse);
+            roket.transform.rotation = transform.rotation;
+            roket.gameObject.SetActive(true);
+            roket.Rigidbody.AddForce(transform.up * force, ForceMode2D.Impulse);
         }
 
         public void TakeDamage(int damage)

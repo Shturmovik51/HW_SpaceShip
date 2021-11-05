@@ -47,8 +47,10 @@ namespace SpaceShipGame
             _playerView.Move(horizontal, vertical, deltaTime);
         }
 
-        public void PlayerRotation(Vector3 direction)
+        public void PlayerRotation(Vector3 mousePosition)
         {
+            var direction = Camera.main.ScreenToWorldPoint(mousePosition) - _playerView.transform.position;
+            direction.z = _playerView.transform.position.z;
             _playerView.Rotation(direction);
         }
 
