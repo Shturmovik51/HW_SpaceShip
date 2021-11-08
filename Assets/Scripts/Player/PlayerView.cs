@@ -57,5 +57,10 @@ namespace SpaceShipGame
         {
             OnTakeDamage?.Invoke(damage);
         }
+
+        public void Stop(float fixedDeltaTime)
+        {
+            _moveImplementation.Stop(fixedDeltaTime);
+        }
     }
 }

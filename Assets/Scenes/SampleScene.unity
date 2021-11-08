@@ -583,6 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 121471603}
   _rigidbody: {fileID: 561315896}
+  _axeleration: 100
   _speed: 100
 --- !u!61 &561315895
 BoxCollider2D:
@@ -630,7 +631,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 0
 --- !u!212 &561315897
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ namespace SpaceShipGame
         private Rigidbody2D _playerRigidBody;
         private Transform _transform;
         private protected float _speed;
+        private float _returningForce = 2f;
 
         public MoveTransform(Transform transform, Rigidbody2D playerRigidBody, float speed)
         {
@@ -22,6 +23,12 @@ namespace SpaceShipGame
 
             //_playerRigidBody.AddForce(_transform.up * _speed * deltaTime * vertical, ForceMode2D.Impulse);
             //_playerRigidBody.AddForce(_transform.right * _speed * deltaTime * horizontal, ForceMode2D.Impulse);
+        }
+
+        public void Stop(float fixedDeltaTime)
+        {
+            _playerRigidBody.velocity = Vector2.zero;
+            _playerRigidBody.AddForce((Vector3.zero - _transform.position) * _returningForce * fixedDeltaTime, ForceMode2D.Impulse);
         }
     }
 }

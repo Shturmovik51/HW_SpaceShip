@@ -66,7 +66,7 @@ namespace SpaceShipGame
 
         public void LocalFixedUpdate(float fixedDeltatime)
         {
-            
+            PlayerInViewController(fixedDeltatime);
         }        
 
         private void GetDamage(int damage)
@@ -89,6 +89,16 @@ namespace SpaceShipGame
         {
             yield return new WaitForSeconds(1);
             _isCanShoot = true;
+        }
+
+        private void PlayerInViewController(float fixedDeltaTime)
+        {
+            Vector2 playerScreenPosition = Camera.main.WorldToScreenPoint(_playerView.transform.position);
+            if ((playerScreenPosition.y > Screen.height) || (playerScreenPosition.y < 0f) ||
+                (playerScreenPosition.x > Screen.width) || (playerScreenPosition.x < 0f))
+            {
+                _playerView.Stop(fixedDeltaTime);
+            }
         }
     }
 }

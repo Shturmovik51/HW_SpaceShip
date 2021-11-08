@@ -33,6 +33,7 @@ namespace SpaceShipGame
             var enemy = _enemyPoolController.GetEnemyFromPool();
             enemy.transform.position = spawnposition;
             enemy.Rigidbody.AddForce(Vector2.down* spawnForce, ForceMode2D.Impulse);
+            enemy.Rigidbody.AddTorque(Random.Range(-10f,10f));
             _gameStarter.StartCoroutine(SpawnTimer());
         }
 
