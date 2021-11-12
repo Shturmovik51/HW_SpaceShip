@@ -5,12 +5,12 @@ namespace SpaceShipGame
     public class EnemyFactory
     {
         private Transform _asteroidPref;
-        private AsteroidModelData _bigAsteroidModel;
-        private AsteroidModelData _normalAsteroidModel;
-        private AsteroidModelData _smallAsteroidModel;
+        private Asteroid _bigAsteroidModel;
+        private Asteroid _normalAsteroidModel;
+        private Asteroid _smallAsteroidModel;
 
-        public EnemyFactory(Transform asteroidPref, AsteroidModelData bigAsteroidModel, AsteroidModelData normalAsteroidModel,
-                    AsteroidModelData smallAsteroidModel)
+        public EnemyFactory(Transform asteroidPref, Asteroid bigAsteroidModel, Asteroid normalAsteroidModel,
+                    Asteroid smallAsteroidModel)
         {
             _asteroidPref = asteroidPref;
             _bigAsteroidModel = bigAsteroidModel;
@@ -20,25 +20,26 @@ namespace SpaceShipGame
 
         public Enemy GetBigAsteroid()
         {
-            return InitAsteroid(_bigAsteroidModel);
+            return Object.Instantiate(_bigAsteroidModel);
         }
 
         public Enemy GetNormalAsteroid()
         {
-            return InitAsteroid(_normalAsteroidModel);
+            return Object.Instantiate(_normalAsteroidModel);
         }
 
         public Enemy GetSmallAsteroid()
         {
-            return InitAsteroid(_smallAsteroidModel);
+            return Object.Instantiate(_smallAsteroidModel);
+            //return InitAsteroid(_smallAsteroidModel);
         }
 
-        private Enemy InitAsteroid(AsteroidModelData model)
-        {
-            var asteroid = Object.Instantiate(_asteroidPref).GetComponent<Asteroid>();
-            asteroid.transform.localScale = model.Scale;
-            asteroid.Init(model.Mass, model.Damage, new EntityHealth(model.MaxHealth, model.CurrentHealth));
-            return asteroid;
-        }
+        //private Enemy InitAsteroid(AsteroidModelData model)
+        //{
+        //    var asteroid = Object.Instantiate(_asteroidPref).GetComponent<Asteroid>();
+        //    asteroid.transform.localScale = model.Scale;
+        //    asteroid.Init(model.Mass, model.Damage, new EntityHealth(model.MaxHealth, model.CurrentHealth));
+        //    return asteroid;
+        //}
     }
 }

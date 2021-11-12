@@ -18,7 +18,7 @@ namespace SpaceShipGame
             _moveImplementation = new AccelerationMove(transform, playerRigidBody, speed, acceleration);
             _rotationImplementation = new RotationShip(transform);
         }
-
+        
         public void Move(float horizontal, float vertical, float deltaTime)
         {
             _moveImplementation.Move(horizontal, vertical, deltaTime);
@@ -28,7 +28,7 @@ namespace SpaceShipGame
         {           
             _rotationImplementation.Rotation(direction);
         }
-
+                
         public void AddAcceleration()
         {
             if (_moveImplementation is AccelerationMove accelerationMove)
@@ -45,7 +45,7 @@ namespace SpaceShipGame
             }
         }
 
-        public void Shoot(Roket roket, float force)
+        public void Shoot(Rocket roket, float force)
         {
             roket.transform.position = _shootStartPosition.position;
             roket.transform.rotation = transform.rotation;

@@ -70,7 +70,7 @@
     <Compile Include="Assets\Scripts\Enemies\AsteroidSpawner.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyFactory.cs" />
     <Compile Include="Assets\Scripts\ControllersManager\ICleanable.cs" />
-    <Compile Include="Assets\Scripts\Roket\Roket.cs" />
+    <Compile Include="Assets\Scripts\Roсket\Rocket.cs" />
     <Compile Include="Assets\Scripts\IMove.cs" />
     <Compile Include="Assets\Scripts\ControllersManager\IInitializable.cs" />
     <Compile Include="Assets\Scripts\RotationShip.cs" />
@@ -78,10 +78,10 @@
     <Compile Include="Assets\Scripts\Input\InputKeysData.cs" />
     <Compile Include="Assets\Scripts\Input\AxisManager.cs" />
     <Compile Include="Assets\Scripts\AccelerationMove.cs" />
-    <Compile Include="Assets\Scripts\Pools\RoketPoolController.cs" />
+    <Compile Include="Assets\Scripts\Pools\RocketPoolController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerModel.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Roket\RoketFactory.cs" />
+    <Compile Include="Assets\Scripts\Roсket\RocketFactory.cs" />
     <Compile Include="Assets\Scripts\ControllersManager\IFixedUpdatable.cs" />
     <Compile Include="Assets\Scripts\ControllersManager\IController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerView.cs" />
@@ -92,6 +92,8 @@
     <Compile Include="Assets\Scripts\Input\InputKeys.cs" />
     <Compile Include="Assets\Scripts\ControllersManager\ControllersManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\Asteroid.cs" />
+    <Compile Include="Assets\Scripts\ServiceLocator.cs" />
+    <Compile Include="Assets\Scripts\RocketBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -8,11 +8,11 @@ namespace SpaceShipGame
         private PlayerModel _playerModel;
         private PlayerView _playerView;
         private InputController _inputController;
-        private RoketPoolController _roketPool;
+        private RocketPoolController _roketPool;
         private bool _isCanShoot;
 
         public PlayerController(PlayerModel playerModel, PlayerView playerView, InputController inputController, 
-                    RoketPoolController roketPool)
+                    RocketPoolController roketPool)
         {
             _playerModel = playerModel;
             _playerView = playerView;
@@ -83,6 +83,7 @@ namespace SpaceShipGame
             var roket = _roketPool.GetRoketFromPool();
             _playerView.Shoot(roket, _playerModel.Force);
             _playerView.StartCoroutine(ShootDelay());
+
         }
 
         private IEnumerator ShootDelay()

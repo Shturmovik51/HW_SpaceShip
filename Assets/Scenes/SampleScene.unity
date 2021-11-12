@@ -332,14 +332,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerView: {fileID: 121471601}
-  _roketPref: {fileID: 6744269215254519031, guid: 6e9ef4a3674e08444987857265c0d5a3, type: 3}
+  _rocketPref: {fileID: 0}
   _asteroidPref: {fileID: 1442723470674410192, guid: 3e52eb8e7816c444ba94a7c5d957961d, type: 3}
   _bigAsteroidModel: {fileID: 11400000, guid: f6c269527f34bfc41a499dd7de905789, type: 2}
   _normalAsteroidModel: {fileID: 11400000, guid: 4bcfcc95b60826149b3e912645bee526, type: 2}
   _smallaAsteroidModel: {fileID: 11400000, guid: 468d3ab80f71eba47b1197452d071fba, type: 2}
+  _bigAsteroidPrototype: {fileID: -4066083457345971056, guid: 2524607ac80c4244caa0b45828aed329, type: 3}
+  _normalAsteroidPrototype: {fileID: -4066083457345971056, guid: 9242f91b06ef5614e8f71e0406a48bc7, type: 3}
+  _smallAsteroidPrototype: {fileID: -4066083457345971056, guid: 632404f18825f54428c87809d6fc3597, type: 3}
   _leftBorder: {fileID: 376799348}
   _rightBorder: {fileID: 1354045224}
-  _roketDamage: 100
+  _rocketDamage: 0
 --- !u!4 &136735879
 Transform:
   m_ObjectHideFlags: 0

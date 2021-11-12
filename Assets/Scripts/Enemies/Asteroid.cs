@@ -4,18 +4,16 @@ using UnityEngine;
 
 namespace SpaceShipGame
 {
-    public class Asteroid : Enemy , IDamagable
-    {
-        private int _damage;
-        public int Damage => _damage;
-             
-        public void Init(float mass, int damage, EntityHealth health)
-        {
-            Rigidbody = GetComponent<Rigidbody2D>();
-            Rigidbody.mass = mass;
-            _damage = damage;
-            Health = health;
-        }
+    public class Asteroid : Enemy, IDamagable
+    {       
+
+        //public void Init(float mass, int damage, EntityHealth health)
+        //{
+        //    Rigidbody = GetComponent<Rigidbody2D>();
+        //    Rigidbody.mass = mass;
+        //    Damage = damage;
+        //    Health = health;
+        //}
 
         public void TakeDamage(int damage)
         {
@@ -35,7 +33,7 @@ namespace SpaceShipGame
         {
             if(collision.gameObject.TryGetComponent(out IDamagable collObject))
             {
-                collObject.TakeDamage(_damage);
+                collObject.TakeDamage(Damage);
             }
         }
     }
