@@ -4,12 +4,12 @@ namespace SpaceShipGame
 {
     internal sealed class RocketBuilder
     {
-        private GameObject _roñket;
+        private GameObject _rocket;
         private Rocket _componentRocket;        
 
         public RocketBuilder InstantiateObject()
         {
-            _roñket = Object.Instantiate(Resources.Load<GameObject>("EmptyRocket"));
+            _rocket = Object.Instantiate(Resources.Load<GameObject>("EmptyRocket"));
             return this;
         }
 
@@ -45,8 +45,8 @@ namespace SpaceShipGame
 
         public RocketBuilder Scale(float value)
         {
-            var scale = new Vector3(value, value, _roñket.transform.localScale.z);
-            _roñket.transform.localScale = scale;
+            var scale = new Vector3(value, value, _rocket.transform.localScale.z);
+            _rocket.transform.localScale = scale;
             return this;
         }
         public Rocket ReturnComponentRocket()
@@ -54,13 +54,12 @@ namespace SpaceShipGame
             return _componentRocket;
         }
 
-
         private T GetOrAddComponent<T>() where T : Component
         {
-            var result = _roñket.GetComponent<T>();
+            var result = _rocket.GetComponent<T>();
             if (!result)
             {
-                result = _roñket.AddComponent<T>();
+                result = _rocket.AddComponent<T>();
             }
             return result;
         }

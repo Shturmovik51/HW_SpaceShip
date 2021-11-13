@@ -6,26 +6,26 @@ namespace SpaceShipGame
 {
     public class RocketFactory
     {
-        private Rocket _roñketPref;
-        private int _roñketDamage;
-        private RocketBuilder _roñketBuilder;
+        private Rocket _rocketPref;
+        private int _rocketDamage;
+        private RocketBuilder _rocketBuilder;
         
         private float mass = 1f;            // ÷òîáû íå òÿíóòü ñî ñòàğòåğà, âñå ğàâíî óäàëş
         private float scale = 0.2f;
 
-        public RocketFactory(Rocket roñketPref, int roñketDamage)
+        public RocketFactory(Rocket rocketPref, int rocketDamage)
         {
-            _roñketPref = roñketPref;
-            _roñketDamage = roñketDamage;
-            _roñketBuilder = new RocketBuilder();
+            _rocketPref = rocketPref;
+            _rocketDamage = rocketDamage;
+            _rocketBuilder = new RocketBuilder();
         }
 
-        public Rocket GetRoñket()
+        public Rocket GetRocket()
         {
-            // return Rocket.CreateRoñket(_roñketPref, _roñketDamage);
+            // return Rocket.CreateRocket(_rocketPref, _rocketDamage);
 
-            var rocket = _roñketBuilder.InstantiateObject()
-                                       .AddComponentRocket(_roñketDamage)
+            var rocket = _rocketBuilder.InstantiateObject()
+                                       .AddComponentRocket(_rocketDamage)
                                        .AddSprite(Resources.Load<Sprite>("Capsule"))
                                        .AddRigidbody2D(mass)
                                        .AddCapsuleCollider2D()

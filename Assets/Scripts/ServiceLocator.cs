@@ -5,15 +5,15 @@ using UnityEngine;
 
 public static class ServiceLocator
 {
-    private static readonly Dictionary<Type, object> _service—ontainer =
+    private static readonly Dictionary<Type, object> _serviceContainer =
         new Dictionary<Type, object>();
 
     public static void SetServiceToDictionary<T>(T value) where T : class
     {
         var typeValue = typeof(T);
-        if (!_service—ontainer.ContainsKey(typeValue))
+        if (!_serviceContainer.ContainsKey(typeValue))
         {
-            _service—ontainer[typeValue] = value;
+            _serviceContainer[typeValue] = value;
         }
     }
 
@@ -21,9 +21,9 @@ public static class ServiceLocator
     {
         var type = typeof(T);
 
-        if (_service—ontainer.ContainsKey(type))
+        if (_serviceContainer.ContainsKey(type))
         {
-            return (T)_service—ontainer[type];
+            return (T)_serviceContainer[type];
         }
 
         return default;

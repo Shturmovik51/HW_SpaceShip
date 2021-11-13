@@ -20,8 +20,8 @@ namespace SpaceShipGame
         }
         //public static Rocket CreateRocket(Rocket rocketPref, int damage)
         //{
-        //    var roñket = Instantiate(roketPref);
-        //    roñket.Init(damage);
+        //    var rocket = Instantiate(rocketPref);
+        //    rocket.Init(damage);
         //    return rocket;
         //}
         //public void Init(int damage)

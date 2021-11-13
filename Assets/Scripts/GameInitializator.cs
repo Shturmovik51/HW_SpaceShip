@@ -7,18 +7,18 @@ namespace SpaceShipGame
         public GameInitializator(ControllersManager controllersManager, InputKeysData inputKeysData, PlayerModelData playerData,
                     PlayerView playerView, Camera camera, Transform asteroidPref, AsteroidModelData bigAsteroidModel,
                         AsteroidModelData _normalAsteroidModel, AsteroidModelData _smallAsteroidModel, GameStarter gameStarter,
-                            Transform leftBorder, Transform rightBorder, Rocket roñketPref, int roñketDamage, Asteroid bigAsteroid,
+                            Transform leftBorder, Transform rightBorder, Rocket rocketPref, int rocketDamage, Asteroid bigAsteroid,
                                 Asteroid normalAsteroid, Asteroid smallAsteroid)
         {
             var inputController = new InputController(inputKeysData);
 
             var asteroidFactory = new EnemyFactory(asteroidPref, bigAsteroid, normalAsteroid, smallAsteroid);
-            var roñketFactory = new RocketFactory(roñketPref, roñketDamage);
+            var rocketFactory = new RocketFactory(rocketPref, rocketDamage);
 
             var enemyPoolController = new EnemyPoolController(asteroidFactory, gameStarter);
             ServiceLocator.SetServiceToDictionary(enemyPoolController);
 
-            var rocketPoolController = new RocketPoolController(roñketFactory, gameStarter);
+            var rocketPoolController = new RocketPoolController(rocketFactory, gameStarter);
 
             var playerModel = new PlayerModel(playerData, camera);
             var playerController = new PlayerController(playerModel, playerView, inputController, rocketPoolController);

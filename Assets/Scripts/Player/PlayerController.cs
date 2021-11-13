@@ -80,7 +80,7 @@ namespace SpaceShipGame
             if (!_isCanShoot) return;
 
             _isCanShoot = false;
-            var roket = _roketPool.GetRoketFromPool();
+            var roket = _roketPool.GetRocketFromPool();
             _playerView.Shoot(roket, _playerModel.Force);
             _playerView.StartCoroutine(ShootDelay());
 
